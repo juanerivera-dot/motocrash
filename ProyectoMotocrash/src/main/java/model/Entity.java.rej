@@ -1,0 +1,66 @@
+diff a/ProyectoMotocrash/src/main/java/model/Entity.java b/ProyectoMotocrash/src/main/java/model/Entity.java	(rejected hunks)
+@@ -15,12 +15,63 @@
+     public static final int DIR_LEFT = 1;
+     public static final int DIR_RIGHT = 2;
+ 
+-    // Atributos.
++    /**
++     * Atributos del juego,
++     */
++    /**
++     * Posición de la entidad en el eje X dentro del mapa.
++     */
+     private int x;
++    /**
++     * Posición de la entidad en el eje Y dentro del mapa.
++     */
+     private int y;
++    /**
++     * Ancho de la entidad en píxeles.
++     */
+     private int widht;
++    /**
++     * Alto de la entidad en píxeles.
++     */
+     private int height;
++    /**
++     * Imágen representativa visual de la entidad en pantalla.
++     */
+     private BufferedImage sprite;
++    /**
++     * Indica si la entidad está activa en el juego.
++     * Si es {@code false}, la entidad no se dibuja ni se actualiza.
++     */
+     private boolean active;
++    /**
++     * Dirección actual de movimiento de la entidad.
++     * Los valores válidos son: DIR_NONE, DIR_LEFT, DIR_RIGHT, DIR_UP, DIR_DOWN.
++     */
+     private int direction;
++
++    /**
++     * Crea una nueva entidad en la posición indicada.
++     * @param x
++     * @param y
++     * @param widht
++     * @param height
++     * @param sprite
++     * @param active
++     * @param direction
++     */
++    public Entity(int x, int y, int widht, int height, BufferedImage sprite, boolean active, int direction) {
++        this.x = x;
++        this.y = y;
++        this.sprite = sprite;
++        if (sprite != null) {
++            this.widht = sprite.getWidth();
++            this.height = sprite.getHeight();
++        }
++        this.widht = widht;
++        this.height = height;
++        this.active = active;
++        this.direction = direction;
++    }
++
++
+ }
